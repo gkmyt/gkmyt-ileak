@@ -1,0 +1,72 @@
+/* ileak 共通の配色切り替え（サイバー／レトロ／見やすい）  Claude 2026-10-27
+   html[data-theme] で切り替える。「見やすい」は各ページ元の明るい配色をそのまま使う。 */
+.themes{display:inline-flex;gap:6px;align-items:center;font-size:12px;margin:0 0 12px;flex-wrap:wrap}
+.themes span{opacity:.8}
+.themes button{font:inherit;font-size:12px;padding:4px 10px!important;border-radius:999px!important;border:1px solid #9baab3;background:#fff;color:#152a3b;cursor:pointer;line-height:1.4}
+.themes button[aria-pressed="true"]{border-color:#177c7f;color:#177c7f;font-weight:700}
+
+html[data-theme="cyber"]{--th-bg:#050b14;--th-bg2:radial-gradient(ellipse at 50% 0%,#0b2038 0%,#050b14 60%);--th-panel:#0a1626;--th-panel2:#0e1f35;--th-head:#0b2038;--th-line:#00e5ff;--th-text:#d8f6ff;--th-muted:#8fb3c3;--th-title:#ffffff;--th-border:rgba(0,229,255,.22);--th-glow:0 0 18px rgba(0,229,255,.45);--th-high:#ff3b6b;--th-mid:#ffb020;--th-low:#7fdbff;--th-mono:"Source Han Sans JP",sans-serif}
+html[data-theme="retro"]{--th-bg:#0b0428;--th-bg2:linear-gradient(transparent,transparent);--th-panel:rgba(22,8,64,.86);--th-panel2:rgba(48,18,110,.7);--th-head:#3a0ca3;--th-line:#29e7ff;--th-text:#f3e8ff;--th-muted:#c9b8f2;--th-title:#ffffff;--th-border:rgba(255,43,214,.4);--th-glow:0 0 10px rgba(255,43,214,.8);--th-high:#ff3864;--th-mid:#ffd23f;--th-low:#29e7ff;--th-mono:"Source Han Sans JP",sans-serif}
+
+:is(html[data-theme="cyber"],html[data-theme="retro"]) body{background:var(--th-bg2),var(--th-bg)!important;background-attachment:fixed!important;color:var(--th-text)}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) a{color:var(--th-line)}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) :is(h1,h2,h3,.card h3,.company-cell b,.stat b,.big,.footer-brand,.site-brand,nav a[aria-current],main h1,main h2,main h3,.contact .name,.action){color:var(--th-title)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) h1{text-shadow:var(--th-glow)}
+html[data-theme="retro"] :is(h1,h2,.kicker,nav,.stat b,.big,th){font-family:var(--th-mono)}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) :is(small,.muted,.kicker,.lead-s,.company-service,.accordion-hint,.site-brand span,.aside,.lead){color:var(--th-muted)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) nav a{color:var(--th-muted)}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) :is(.card,.tablewrap,.stat,.methodology,.case,.step,.contact,.controls,.sources,.closing,.caution,.important,.urgent,.checks,.sector-legend,.social-thumbnail img){background:var(--th-panel)!important;border-color:var(--th-border)!important;color:var(--th-text)!important;box-shadow:none!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .card{border-top-color:var(--sector,var(--th-line))!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .note{background:rgba(255,176,0,.08)!important;border-left-color:var(--th-mid)!important;color:var(--th-text)}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) :is(input,select,button){background:var(--th-panel2)!important;color:var(--th-text)!important;border-color:var(--th-border)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) button:hover{background:var(--th-head)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) th{background:var(--th-head)!important;color:var(--th-line)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) th button{background:transparent!important;color:inherit!important;border:0!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) :is(th,td){border-bottom-color:var(--th-border)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) tr:hover{background:var(--th-panel2)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) :is(.pill,.band,.tag){background:var(--th-panel2)!important;color:var(--th-text)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .ai{background:rgba(130,150,255,.16)!important;color:#c3ccff!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .track{background:var(--th-panel2)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .fill{background:var(--th-line)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .fill.urg{background:var(--th-mid)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .todo{background:var(--th-panel2)!important;border-left-color:var(--th-line)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .todo b{color:var(--th-line)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .shz{border-color:var(--th-line)!important;color:var(--th-line)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .risk-high{background:var(--th-high)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .risk-mid{background:var(--th-mid)!important;color:#000!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .risk-low{background:var(--th-low)!important;color:#000!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) :is(.sector-label,.sector-legend){filter:brightness(1.7) saturate(1.2)}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) :is(.urgent,.case.urgent){border-left-color:var(--th-high)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) :is(.important,.case.important){border-left-color:var(--th-mid)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) details{border-top-color:var(--th-border)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) summary::marker{color:var(--th-line)}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .site-footer{background:#02060b!important;border-top:1px solid var(--th-border)}
+
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .site-footer :is(a,small){color:var(--th-muted)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .skip-link{background:var(--th-panel)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) :focus-visible{outline-color:var(--th-line)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .themes button{background:var(--th-panel2)!important;color:var(--th-text)!important;border-color:var(--th-border)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .themes button[aria-pressed="true"]{border-color:var(--th-line)!important;color:var(--th-line)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) img.social-thumbnail,:is(html[data-theme="cyber"],html[data-theme="retro"]) .social-thumbnail img{opacity:.92}
+@media print{html[data-theme] body{background:#fff!important;color:#000!important}html[data-theme] body::after{display:none}}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .lead b{background:linear-gradient(transparent 62%,var(--th-border) 62%)!important;color:var(--th-title)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) :is(header,main h2,hr){border-color:var(--th-border)!important}
+:is(html[data-theme="cyber"],html[data-theme="retro"]) .step:before{background:var(--th-line)!important;color:var(--th-bg)!important}
+html[data-theme="retro"]{background:radial-gradient(1.5px 1.5px at 12% 18%,#fff,transparent),radial-gradient(1px 1px at 28% 8%,#fff,transparent),radial-gradient(1.5px 1.5px at 47% 22%,#ffd1f3,transparent),radial-gradient(1px 1px at 63% 12%,#fff,transparent),radial-gradient(1.5px 1.5px at 78% 26%,#bde9ff,transparent),radial-gradient(1px 1px at 90% 9%,#fff,transparent),radial-gradient(1px 1px at 6% 40%,#fff,transparent),radial-gradient(1px 1px at 95% 44%,#fff,transparent),radial-gradient(ellipse at 50% 75%,#3a0f7a 0%,#160647 45%,#06021c 100%) fixed,#0b0428}
+html[data-theme="retro"] body{background:transparent!important}
+html[data-theme="retro"] body::before{content:"";position:fixed;left:-50%;right:-50%;bottom:-12vh;height:52vh;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(255,43,214,.6) 2px,transparent 2px),linear-gradient(90deg,rgba(255,43,214,.6) 2px,transparent 2px);background-size:80px 80px;transform:perspective(320px) rotateX(62deg);transform-origin:center top;animation:synthgrid 3s linear infinite;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 30%);mask-image:linear-gradient(to bottom,transparent 0%,#000 30%)}
+@keyframes synthgrid{to{background-position:0 80px}}
+html[data-theme="retro"] body::after{content:"";position:fixed;z-index:-2;pointer-events:none;width:min(48vw,520px);aspect-ratio:1;left:50%;bottom:27vh;transform:translateX(-50%);border-radius:50%;background:linear-gradient(#ffe66d 0%,#ff9a3c 32%,#ff3d7f 58%,#c213a7 82%);-webkit-mask-image:linear-gradient(#000 46%,transparent 46%,transparent 50%,#000 50%,#000 60%,transparent 60%,transparent 65%,#000 65%,#000 73%,transparent 73%,transparent 79%,#000 79%,#000 86%,transparent 86%,transparent 93%,#000 93%);mask-image:linear-gradient(#000 46%,transparent 46%,transparent 50%,#000 50%,#000 60%,transparent 60%,transparent 65%,#000 65%,#000 73%,transparent 73%,transparent 79%,#000 79%,#000 86%,transparent 86%,transparent 93%,#000 93%);opacity:.5;filter:drop-shadow(0 0 40px rgba(255,61,127,.7))}
+html[data-theme="retro"]:root h1{font-style:italic;font-weight:700;letter-spacing:.02em;background:linear-gradient(180deg,#0b3d91 0%,#6fb6ff 30%,#ffffff 49%,#1a0533 51%,#b5179e 74%,#ffd1f3 100%);-webkit-background-clip:text;background-clip:text;color:transparent!important;-webkit-text-stroke:1px rgba(255,255,255,.55);filter:drop-shadow(0 0 6px rgba(41,231,255,.75)) drop-shadow(0 0 18px rgba(255,43,214,.5));text-shadow:none!important;display:inline-block;padding-right:.15em}
+html[data-theme="retro"]:root h2{color:#fff!important;text-shadow:0 0 8px rgba(255,43,214,.9),0 0 22px rgba(255,43,214,.45)}
+html[data-theme="retro"]:root .kicker{color:#29e7ff!important;letter-spacing:.32em;text-shadow:0 0 8px rgba(41,231,255,.8);font-style:italic}
+html[data-theme="retro"]:root :is(.card,.tablewrap,.stat,.methodology,.case,.step,.contact,.controls,.mypanel,.scope){background:rgba(22,8,64,.86)!important;border:1px solid rgba(255,43,214,.6)!important;box-shadow:0 0 0 1px rgba(41,231,255,.12) inset,0 0 18px rgba(255,43,214,.28)!important;border-radius:14px!important;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+html[data-theme="retro"]:root .card{border-top:3px solid var(--sector,#ff2bd6)!important}
+html[data-theme="retro"]:root :is(.brand,.card h3,.company-cell b){color:#fff!important;text-shadow:0 0 8px rgba(255,43,214,.75)}
+html[data-theme="retro"]:root th{background:linear-gradient(90deg,#3a0ca3,#7209b7)!important;color:#fff!important}
+html[data-theme="retro"]:root .note{background:rgba(255,210,63,.1)!important;border-left-color:#ffd23f!important}
+html[data-theme="retro"]:root .themes button[aria-pressed="true"],html[data-theme="retro"]:root .ctrl .seg button[aria-pressed="true"],html[data-theme="retro"]:root .chip[aria-pressed="true"],html[data-theme="retro"]:root .use[aria-pressed="true"],html[data-theme="retro"]:root .mybar button{background:linear-gradient(90deg,#ff2bd6,#7b2ff7)!important;color:#fff!important;border-color:#ff2bd6!important}
+html[data-theme="retro"]:root .lead b{background:linear-gradient(transparent 62%,rgba(255,43,214,.45) 62%)!important;color:#fff!important}
+html[data-theme="retro"]:root .site-footer{background:rgba(6,2,28,.9)!important}
+html[data-theme="retro"]:root .mybar{background:rgba(11,4,40,.92);border-top:2px solid #ff2bd6;box-shadow:0 -4px 20px rgba(255,43,214,.35)}
+html[data-theme="retro"]:root .stage{background:rgba(8,3,32,.72)!important;border:1px solid rgba(41,231,255,.5)!important;box-shadow:0 0 22px rgba(41,231,255,.25)!important}
