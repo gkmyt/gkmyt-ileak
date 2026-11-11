@@ -1,9 +1,8 @@
-# GitHub Actions：main に push されたら、FTPS で gkmyt.net の apps/<アプリ>/ に上げる
-# （publish-github.sh --setup が各リポジトリに置く。接続先とパスワードはリポジトリの Secrets）
+# GitHub Actions：FTPS で gkmyt.net の apps/<アプリ>/ に上げる（手動実行だけ）
+# 2026-11-11 から自動実行を止めた。さくらの国外IPアドレスフィルタで GitHub（米国）からの FTP が切られるため、
+# サーバーへは Mac の publish-github.sh が直接 FTPS で上げる。フィルタを無効にしたときだけ手動で使える。
 name: Deploy to gkmyt.net
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 concurrency:
   group: deploy
